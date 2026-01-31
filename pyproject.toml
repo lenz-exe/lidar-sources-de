@@ -1,0 +1,34 @@
+[project]
+name = "lidar_sources_de"
+version = "1.0.0"
+description = "Description..."
+authors = [
+    {name = "lenz-exe", email = "28509873+lenz-exe@users.noreply.github.com"},
+]
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.14.14"
+mypy = "^1.19.1"
+pytest = "^9.0.2"
+
+[tool.poetry]
+packages = [
+    {include = "lidar_sources_de", from = "src"},
+    {include = "devscripts"}
+]
+include = [
+    {path = "src/lidar_sources_de/py.typed", format = "sdist"},
+    {path = "src/lidar_sources_de/py.typed", format = "wheel"},
+]
+
+[project.scripts]
+check = "dev_scripts.dev_commands:run_checks_formats_tests_local"
+check-ci = "dev_scripts.dev_commands:run_checks_tests_local"

@@ -1,0 +1,44 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+__pypackages__/
+*.py[codz]
+*$py.class
+
+# C extensions
+*.so
+
+# Environments
+.env
+.envrc
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Distribution / packaging
+build/
+dist/
+wheels/
+poetry.lock
+
+# Unit test / coverage reports
+.ruff_cache/
+.cache
+.pytest_cache/
+.mypy_cache/
+.dmypy.json
+dmypy.json
+report_pytest.xml
+report_ruff.json
+
+# IDEs
+.idea/
+.code/
+.vscode/
+.abstra/
+
+# Generated files
+*.log
+*.db
