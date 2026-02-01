@@ -1,11 +1,11 @@
 import os
 import subprocess
 import sys
-from typing import List
 
 
-def get_directories(path: str) -> List[str]:
+def get_directories(path: str) -> list[str]:
     return [d for d in os.listdir(path) if os.path.isdir(os.path.join(path, d))]
+
 
 def run_checks_formats_tests_local():
     src_path = "src"
@@ -29,7 +29,7 @@ def run_checks_formats_tests_local():
             sys.exit(result.returncode)
 
 
-def run_checks_tests_local():
+def run_checks_tests_for_ci():
     src_path = "src"
     directories = get_directories(src_path)
 

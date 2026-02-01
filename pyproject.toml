@@ -8,6 +8,8 @@ authors = [
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
+    "requests (>=2.32.5,<3.0.0)",
+    "beautifulsoup4 (>=4.14.3,<5.0.0)"
 ]
 
 [build-system]
@@ -18,11 +20,12 @@ build-backend = "poetry.core.masonry.api"
 ruff = "^0.14.14"
 mypy = "^1.19.1"
 pytest = "^9.0.2"
+types-requests = "^2.32.4.20260107"
 
 [tool.poetry]
 packages = [
     {include = "lidar_sources_de", from = "src"},
-    {include = "devscripts"}
+    {include = "dev_scripts"}
 ]
 include = [
     {path = "src/lidar_sources_de/py.typed", format = "sdist"},
@@ -31,4 +34,4 @@ include = [
 
 [project.scripts]
 check = "dev_scripts.dev_commands:run_checks_formats_tests_local"
-check-ci = "dev_scripts.dev_commands:run_checks_tests_local"
+check-ci = "dev_scripts.dev_commands:run_checks_tests_for_ci"
