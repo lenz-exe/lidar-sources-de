@@ -26,16 +26,34 @@ poetry install
 ---
 
 # Example Usage
+## Example 1
 ```python
-from lidar_sources_de.portal_bavaria import get_bavaria_geoportal_lidar_file_list
+from lidar_sources_de.bavaria.client import PortalBavariaClient
+from lidar_sources_de.bavaria.serializers import to_json
 
-# Provide a local .kml file or a URL from the GeoPortal Bavaria website
-result = get_bavaria_geoportal_lidar_file_list(
-    kml_file_path="docs/bavaria_gemeinde.kml"
+client = PortalBavariaClient(timeout=15, debug=True)
+regions = client.load_regions_from_kml(
+    url="https://services.atlas.bayern.de/proxy/?url=https%3A%2F%2Fgeodaten.bayern.de%2Fodd%2Fa%2Flaser%2Fmeta%2Fkml%2Fgemeinde.kml",
 )
+tiles = client.load_tiles(regions)
 
-print(result)
+to_json(tiles, "docs/output_bavaria_tiles.json")
 ```
 Notes:
-- The function generates a list of all available `.laz` files from the GeoPortal Bavaria for a given `.kml` file.
-- To obtain the `.kml` file or URL, visit the GeoPortal Bavaria and inspect the network requests in your browser.
+- get the current possible `.laz` file urls out of kml url
+- returns a json with all urls for the `.laz` files
+
+## Example 2
+```python
+from lidar_sources_de.bavaria.client import PortalBavariaClient
+from lidar_sources_de.bavaria.serializers import to_json
+
+client = PortalBavariaClient(timeout=15, debug=True)
+regions = client.load_regions_from_kml(path="docs/bavaria_gemeinde.kml")
+tiles = client.load_tiles(regions)
+
+print(f"Found tiles: {len(tiles)}")
+```
+Notes:
+- get the current possible `.laz` file urls out of a local kml file path
+- returns `tiles` in form of a list

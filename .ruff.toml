@@ -43,15 +43,8 @@ select = [
     "I",    # isort is a Python utility to sort imports alphabetically and automatically separate into sections
     "N",    # pep8-naming conventions
 ]
-ignore = [
-    # "N801",    # Class name should use CapWords convention
-    # "N802",    # function name should be lowercase
-    # "N803",    # Argument name should be lowercase
-    # "N806",    # variable in function should be lowercase
-    # "N815",    # Variable in class scope should not be mixedCase
-    # "N816",    # Variable in global scope should not be mixedCase
-    # "N999",    # Invalid module name: '{name}' (Instead of ExampleModule, use example_module)
-]
+ignore = []
+
 # Allow autofix for all enabled rules (when `--fix`) is provided.
 fixable = [
     "F401",    # {name} imported but unused
