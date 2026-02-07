@@ -1,16 +1,37 @@
 [project]
 name = "lidar_sources_de"
 version = "1.0.0"
-description = "Description..."
+description = "Unified LiDAR data source definitions for all German federal states (Python modules) for large-scale downloading and processing."
 authors = [
     {name = "lenz-exe", email = "28509873+lenz-exe@users.noreply.github.com"},
 ]
+license = "BSD-3-Clause"
 readme = "README.md"
 requires-python = ">=3.13"
+keywords = [ "lidar", "geoportal", "open-data" ]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: GIS",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Operating System :: OS Independent",
+    "Natural Language :: English",
+]
 dependencies = [
     "requests (>=2.32.5,<3.0.0)",
     "beautifulsoup4 (>=4.14.3,<5.0.0)"
 ]
+
+[project.urls]
+repository = "https://github.com/lenz-exe/lidar-sources-de"
+documentation = "https://github.com/lenz-exe/lidar-sources-de/blob/main/README.md"
+"Bug Tracker" = "https://github.com/lenz-exe/lidar-sources-de/issuess"
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
